@@ -394,9 +394,10 @@ in
 end
 
 declare L T1 T2
-T1 = {Property.get 'time.total'}
-L={Josephus3 40 3}
-T2 = {Property.get 'time.total'}
+T1={Time.time}
+L={Josephus3 30000 300}
+%L={Josephus3 40 3}
+T2={Time.time}
 {Browse L}
 {Browse 'Total Time = '#(T2-T1)}
 
@@ -453,15 +454,17 @@ L={Josephus4 40 3}
 
 
 declare L T1 T2
-T1 = {Property.get 'time.total'}
-L={Josephus4 40000 900}
-T2 = {Property.get 'time.total'}
+T1 = {Time.time}
+L={Josephus4 30000 300}
+T2 = {Time.time}
 {Browse L}
 {Browse T1}
 {Browse T2}
 {Browse 'Total Time = '#(T2-T1)}
 
-
+declare T
+T = {Time.time}
+{Browse T}
 
 % 短絡しないパターンはクラスに属性いっぱい持たせて複雑になってる感じ
 % 短絡しないパターンは同じに書けない
